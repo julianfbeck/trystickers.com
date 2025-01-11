@@ -1,5 +1,17 @@
 ---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
 import { Plausible } from "astro-analytics";
+
+const { 
+  title = "AI Sticker Apps - Create Amazing Stickers for WhatsApp and iMessage",
+  description = "Transform your ideas into stunning stickers using AI. Create custom emoji stickers for WhatsApp and iMessage with our powerful sticker generation apps.",
+  image = "/images/og-image.png"
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,7 +21,33 @@ import { Plausible } from "astro-analytics";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="stickers, WhatsApp stickers, iMessage stickers, AI stickers, emoji stickers, custom stickers, sticker maker, sticker generator" />
+    <link rel="canonical" href={Astro.url} />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/images/emoji-pattern.png" />
   </head>
   <body>
     <Plausible

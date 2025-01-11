@@ -12,66 +12,59 @@ interface App {
 const apps: App[] = [
   {
     title: "WhatsEmoji for WhatsApp",
-    description: "Generate custom emoji stickers for WhatsApp using Ai",
+    description: "Generate custom emoji stickers for WhatsApp using AI. Create expressive and unique stickers that bring your conversations to life.",
     icon: "whatsemoji.png",
-    appStoreId: "1234567890",
+    appStoreId: "6740031063",
     features: [
-      "Generate Sticker Packs",
-      "Discover Emojis ",
-      "Share with Friends",
+      "AI-Powered Sticker Generation",
+      "Custom Emoji Creation",
+      "One-Click WhatsApp Sharing",
+      "Unlimited Sticker Packs",
     ],
   },
-  //   {
-  //     title: "Sticker Studio Pro",
-  //     description: "Professional grade sticker creation tools",
-  //     icon: "/images/sticker-studio-icon.png",
-  //     appStoreId: "0987654321",
-  //     features: ["Advanced editing", "Batch creation", "iMessage integration"],
-  //   },
-  //   {
-  //     title: "Meme Sticker Pack",
-  //     description: "Create viral meme stickers instantly",
-  //     icon: "/images/meme-sticker-icon.png",
-  //     appStoreId: "5432167890",
-  //     features: ["Trending meme templates", "Text overlays", "Social sharing"],
-  //   },
 ];
 
 const getAppStoreUrl = (appStoreId: string) =>
   `https://apps.apple.com/app/id${appStoreId}`;
 ---
 
-<Layout>
+<Layout
+  title="WhatsEmoji - AI-Powered Sticker Creator for WhatsApp"
+  description="Create stunning custom emoji stickers for WhatsApp using advanced AI technology. Transform your ideas into expressive stickers instantly."
+>
   <main
     class="min-h-screen bg-gradient-to-b from-yellow-300 via-yellow-200 to-yellow-300"
   >
     <div
       class="absolute inset-0 bg-[url('/images/emoji-pattern.png')] opacity-5"
+      aria-hidden="true"
     >
     </div>
 
     <div class="relative py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
+        <header class="text-center mb-16">
           <h1 class="text-5xl font-bold mb-4 text-gray-800">
-            Create Amazing Stickers 🎨
+            Create Amazing AI Stickers for WhatsApp 🎨
           </h1>
-          <p class="text-xl text-gray-600">
-            Transform your ideas into stunning stickers for iMessage and
-            WhatsApp
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Transform your ideas into stunning stickers using advanced AI technology. 
+            Express yourself with unique, custom-made stickers that bring your WhatsApp conversations to life.
           </p>
-        </div>
+        </header>
 
-        <div class="space-y-8">
+        <section class="space-y-8" aria-label="Featured Apps">
           {
             apps.map((app) => (
-              <div class="bg-white/90 backdrop-blur rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all border-2 border-yellow-100">
+              <article class="bg-white/90 backdrop-blur rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all border-2 border-yellow-100">
                 <div class="flex flex-col sm:flex-row gap-6">
                   <img
                     src={app.icon}
-                    alt={`${app.title} icon`}
+                    alt={`${app.title} App Icon`}
                     class="w-24 h-24 rounded-2xl shadow-lg mx-auto sm:mx-0"
                     loading="lazy"
+                    width="96"
+                    height="96"
                   />
                   <div class="flex-1">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
@@ -86,47 +79,32 @@ const getAppStoreUrl = (appStoreId: string) =>
                         target="_blank"
                         rel="noopener noreferrer"
                         class="mt-4 sm:mt-0 inline-flex items-center justify-center px-6 py-3 rounded-full bg-black hover:bg-gray-800 transition-colors text-white font-medium shadow-lg hover:shadow-xl"
+                        aria-label={`Download ${app.title} on the App Store`}
                       >
-                        Download on the App Store
+                        <span>Download on the App Store</span>
                       </a>
                     </div>
 
                     {app.features && (
                       <div class="mt-4">
-                        <div class="flex flex-wrap gap-3">
+                        <h3 class="sr-only">Features</h3>
+                        <ul class="flex flex-wrap gap-3" role="list">
                           {app.features.map((feature) => (
-                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-sm">
-                              ✨ {feature}
-                            </span>
+                            <li class="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-sm">
+                              <span aria-hidden="true">✨</span>
+                              <span class="ml-1">{feature}</span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
                     )}
                   </div>
                 </div>
-              </div>
+              </article>
             ))
           }
-        </div>
+        </section>
       </div>
     </div>
   </main>
 </Layout>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>
