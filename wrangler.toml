@@ -4,7 +4,6 @@ compatibility_date = "2025-01-09"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "./dist"
 
-routes = [{ pattern = "trystickers.com", custom_domain = true }]
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
