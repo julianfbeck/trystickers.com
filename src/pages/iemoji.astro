@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const features = [
+	{
+		title: "AI-Powered Magic",
+		description:
+			"Transform your ideas into beautiful emoji stickers using advanced artificial intelligence",
+	},
+	{
+		title: "Perfect for iMessage",
+		description:
+			"Seamlessly integrate custom stickers into your iMessage conversations",
+	},
+	{
+		title: "Create & Customize",
+		description:
+			"Design unique emoji stickers that match your personality and style",
+	},
+	{
+		title: "Quick & Easy Sharing",
+		description:
+			"Share your custom stickers instantly with friends and family",
+	},
+];
+---
+
+<Layout
+	title="iEmoji - AI Emoji Generator | Create Custom Stickers for iMessage"
+	description="Transform your iMessage conversations with AI-generated emoji stickers. Create unique, personalized stickers instantly using advanced artificial intelligence. Download iEmoji now!"
+>
+	<main class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+		<div
+			class="absolute inset-0 bg-[url('/images/emoji-pattern.png')] opacity-5"
+			aria-hidden="true"
+		>
+		</div>
+
+		<div class="relative py-20 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<header class="text-center mb-20">
+					<div class="relative mb-8">
+						<div
+							class="relative inline-flex items-center justify-center space-x-4 bg-white px-6 py-2 rounded-full shadow-sm"
+						>
+							<span class="text-4xl animate-bounce">✨</span>
+							<img
+								src="iemoji.png"
+								alt="iEmoji App Icon"
+								class="w-16 h-16 rounded-xl"
+								width="64"
+								height="64"
+							/>
+							<span class="text-4xl animate-bounce">✨</span>
+						</div>
+					</div>
+
+					<div
+						class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6"
+					>
+						<svg
+							class="w-5 h-5 mr-2"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+							></path>
+						</svg>
+						<span>iOS App</span>
+					</div>
+
+					<h1 class="relative">
+						<span
+							class="absolute -inset-1 block blur-2xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-pink-600/20 rounded-3xl"
+						></span>
+						<span
+							class="relative block text-6xl font-extrabold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent"
+						>
+							iEmoji
+							<br class="hidden sm:block" />
+							AI Emoji Generator
+						</span>
+					</h1>
+
+					<div class="relative mt-8 max-w-2xl mx-auto">
+						<div
+							class="absolute -inset-1 bg-gradient-to-r from-purple-100 via-blue-100 to-pink-100 rounded-2xl blur"
+						>
+						</div>
+						<p
+							class="relative text-xl text-gray-600 leading-relaxed bg-white/90 backdrop-blur-sm rounded-xl p-6"
+						>
+							Create unique, custom emoji stickers with the power
+							of artificial intelligence. Transform your ideas
+							into beautiful stickers instantly for iMessage.
+							Express yourself in a whole new way!
+						</p>
+					</div>
+
+					<div class="mt-8">
+						<a
+							href="https://apps.apple.com/us/app/iemoji-ai-emoji-generator/id6740461326?pt=120183609&ct=trystickers&mt=8"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 transform"
+						>
+							<svg
+								class="w-6 h-6 mr-2"
+								viewBox="0 0 24 24"
+								fill="currentColor"
+							>
+								<path
+									d="M16.5 3.5a2.5 2.5 0 0 1 2.5 2.5v12a2.5 2.5 0 0 1-2.5 2.5h-9a2.5 2.5 0 0 1-2.5-2.5V6a2.5 2.5 0 0 1 2.5-2.5h9ZM12 15.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"
+								></path>
+							</svg>
+							<span>Download on the App Store</span>
+						</a>
+					</div>
+				</header>
+
+				<section class="mt-20">
+					<h2 class="text-3xl font-bold text-center mb-12">
+						Key Features
+					</h2>
+					<div class="grid md:grid-cols-2 gap-8">
+						{
+							features.map((feature) => (
+								<div class="bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-gray-100">
+									<h3 class="text-xl font-semibold text-gray-800 mb-3">
+										{feature.title}
+									</h3>
+									<p class="text-gray-600">
+										{feature.description}
+									</p>
+								</div>
+							))
+						}
+					</div>
+				</section>
+
+				<section class="mt-20 text-center">
+					<h2 class="text-3xl font-bold mb-8">
+						Ready to Transform Your Messages?
+					</h2>
+					<p class="text-xl text-gray-600 mb-8">
+						Download iEmoji now and start creating amazing custom
+						stickers for your conversations!
+					</p>
+					<a
+						href="https://apps.apple.com/us/app/iemoji-ai-emoji-generator/id6740461326?pt=120183609&ct=trystickers&mt=8"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 transform"
+					>
+						Download iEmoji
+					</a>
+				</section>
+			</div>
+		</div>
+	</main>
+</Layout>
+
